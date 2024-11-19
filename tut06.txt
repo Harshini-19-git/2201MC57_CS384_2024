@@ -1,0 +1,32 @@
+CS384 2024 Lab 06 - July Dec 2024 - 
+
+================================================================================================================================================
+Part 1: Password Validator with Skip from user input
+Password Validator with Skip: Write a Python program that checks a list of passwords using the criteria. All password should be min 8 length else its always invalid. First ask the user for the criteria it wants to check. These are four criteria:
+
+Uppercase letters (A-Z)
+Lowercase letters (a-z)
+Numbers (0-9)
+Special characters (!, @, #) [Only 3 characters allowed]
+
+Lets say, user will select: 1, 3, 4 so that means all the passwords should match criteria 1, 3, 4. Its AND clause. So criteria 1 & 3 & 4 should be matched.
+
+If user will select: 1, 2, 3, 4 so that means all the passwords should match criteria 1, 2, 3, 4. If a password has a length less than 8, use pass to proceed without any validation and notify the user about the password length issue.
+
+Example:
+
+password_list = [
+"abc12345", # Invalid password. Special characters missing
+"abc", # Invalid password. Less than 8 Characters. Missing Special characters, Uppercase letters, Numbers
+"123456789", # Invalid password. Missing Special characters, Uppercase letters, lowercase letters
+"abcdefg$", # Invalid password. Missing Uppercase letters, Numbers
+"abcdefgABHD!@313", # Valid password.
+"abcdefgABHD$$!@313", # Invalid password. It contains $ which is not allowed.
+]
+
+Take input from user.
+
+================================================================================================================================================
+Part 2: Password Validator with Skip from input file input.txt
+
+Same as prev but it should read passwords from file input.txt. This is self study. It should read the file input.txt and display total count of valid and invalid passwords.
