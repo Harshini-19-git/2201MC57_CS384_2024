@@ -1,3 +1,5 @@
+
+consider same input as lab10 data.
 Mandatory Requirement
 
 1) Missing Values for midsem/endsem (non numeric or blank) to be listed roll number wise on the terminal.
