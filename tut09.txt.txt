@@ -1,0 +1,4 @@
+The input is the attendance you mark using qr, so all those souls who have marked attendance thrice, beyond lecture hours, non lecture dates, will have a nice time. :) 
+Again little tough for chatgpt :) 
+
+Assignment is per student :) not in group
