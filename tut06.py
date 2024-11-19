@@ -109,3 +109,62 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+#part2
+def is_valid_password(password):
+    """
+    Function to check if a password is valid.
+    Rules:
+    - Must be at least 8 characters long.
+    - Must contain at least one uppercase letter.
+    - Must contain at least one lowercase letter.
+    - Must contain at least one digit.
+    """
+    if len(password) < 8:
+        return False
+    if not any(char.isupper() for char in password):
+        return False
+    if not any(char.islower() for char in password):
+        return False
+    if not any(char.isdigit() for char in password):
+        return False
+    return True
+
+
+def validate_passwords_from_file(filename):
+    """
+    Reads passwords from the file and validates them.
+    Skips passwords that start with 'skip_'.
+    """
+    try:
+        with open(filename, 'r') as file:
+            passwords = file.readlines()
+
+        valid_count = 0
+        invalid_count = 0
+
+        for password in passwords:
+            password = password.strip()  # Remove trailing whitespace and newline
+            if password.startswith("skip_"):
+                continue  # Skip the password if it starts with 'skip_'
+
+            if is_valid_password(password):
+                valid_count += 1
+            else:
+                invalid_count += 1
+
+        print(f"Total valid passwords: {valid_count}")
+        print(f"Total invalid passwords: {invalid_count}")
+
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+
+
+# File to read passwords from
+input_file = "input.txt"
+validate_passwords_from_file(input_file)
+
